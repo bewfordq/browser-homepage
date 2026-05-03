@@ -88,7 +88,7 @@ document.addEventListener('keydown', (event) => {
     return;
   }
 
-  if (!isTyping && /^[1-4]$/.test(event.key)) {
+  if (!isTyping && /^[1-5]$/.test(event.key)) {
     event.preventDefault();
     const targetCategory = categories.find((category) => category.dataset.shortcut === event.key);
     openCategory(targetCategory);
