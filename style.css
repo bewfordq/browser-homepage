@@ -49,7 +49,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 20;
-  padding: 18px 0 12px;
+  padding: 16px 0 12px;
   background: linear-gradient(180deg, rgba(8, 8, 8, 0.98) 0%, rgba(8, 8, 8, 0.92) 78%, rgba(8, 8, 8, 0) 100%);
   backdrop-filter: blur(10px);
 }
@@ -57,9 +57,8 @@ body::before {
 .brand-row {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   gap: 14px;
-  margin: 0 2px 12px;
+  margin: 0 2px 8px;
 }
 
 .brand-mark {
@@ -68,13 +67,6 @@ body::before {
   font-weight: 750;
   letter-spacing: -0.02em;
   text-decoration: none;
-}
-
-.brand-subtitle {
-  margin: 0;
-  color: var(--muted-2);
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
 }
 
 .search-form {
@@ -347,7 +339,7 @@ kbd {
   }
 
   .brand-row {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .search-form {
