@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bewf homepage</title>
+  <meta name="description" content="A minimal dark browser homepage for quick study links and distraction-free DuckDuckGo search." />
+  <meta name="theme-color" content="#080808" />
+  <title>bewf start</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page-shell">
     <header class="top-bar" aria-label="Homepage controls">
+      <div class="brand-row" aria-label="Homepage title">
+        <a class="brand-mark" href="./" aria-label="bewf start home">bewf</a>
+        <p class="brand-subtitle">study / search / links</p>
+      </div>
+
       <form id="searchForm" class="search-form" role="search">
         <label class="sr-only" for="searchInput">Search DuckDuckGo</label>
         <input
@@ -23,76 +31,81 @@
         <button id="clearSearch" class="clear-button" type="button" aria-label="Clear search">×</button>
         <button class="search-button" type="submit" aria-label="Search in a new tab">Search</button>
       </form>
-      <p class="shortcut-hint">Press <kbd>/</kbd> to search</p>
+
+      <p class="shortcut-hint">Press <kbd>/</kbd> to search · <kbd>1</kbd>–<kbd>4</kbd> opens sections · <kbd>Esc</kbd> closes</p>
     </header>
 
     <main class="content" aria-label="Study homepage quick links">
       <section class="accordion-list" aria-label="Quick link categories">
-        <details class="category" id="media-category">
+        <details class="category" id="media-category" data-shortcut="1" open>
           <summary>
+            <span class="summary-kicker">01</span>
             <span class="summary-title">Media</span>
             <span class="summary-subtitle">YouTube and YouTube Music</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
           <div class="category-panel">
             <div class="menu-grid short-grid">
-              <article class="menu-card"><a class="card-main" href="https://www.youtube.com/"><img src="icons/youtube.svg" alt="" /><span>YouTube</span></a><a class="new-tab" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://music.youtube.com/"><img src="icons/youtube-music.svg" alt="" /><span>YouTube Music</span></a><a class="new-tab" href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube Music in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://www.youtube.com/"><img src="icons/youtube.svg" alt="" loading="lazy" /><span>YouTube</span></a><a class="new-tab" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://music.youtube.com/"><img src="icons/youtube-music.svg" alt="" loading="lazy" /><span>YouTube Music</span></a><a class="new-tab" href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube Music in a new tab">↗</a></article>
             </div>
           </div>
         </details>
 
-        <details class="category" id="microsoft-category">
+        <details class="category" id="microsoft-category" data-shortcut="2">
           <summary>
+            <span class="summary-kicker">02</span>
             <span class="summary-title">Microsoft</span>
             <span class="summary-subtitle">Teams, Outlook, OneDrive, Word, Excel, PowerPoint</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
           <div class="category-panel">
             <div class="menu-grid">
-              <article class="menu-card"><a class="card-main" href="https://teams.microsoft.com/"><img src="icons/teams.svg" alt="" /><span>Teams</span></a><a class="new-tab" href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Teams in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://outlook.office.com/"><img src="icons/outlook.svg" alt="" /><span>Outlook</span></a><a class="new-tab" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Outlook in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://onedrive.live.com/"><img src="icons/onedrive.svg" alt="" /><span>OneDrive</span></a><a class="new-tab" href="https://onedrive.live.com/" target="_blank" rel="noopener noreferrer" aria-label="Open OneDrive in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/word"><img src="icons/word.svg" alt="" /><span>Word</span></a><a class="new-tab" href="https://www.office.com/launch/word" target="_blank" rel="noopener noreferrer" aria-label="Open Word in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/excel"><img src="icons/excel.svg" alt="" /><span>Excel</span></a><a class="new-tab" href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer" aria-label="Open Excel in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/powerpoint"><img src="icons/powerpoint.svg" alt="" /><span>PowerPoint</span></a><a class="new-tab" href="https://www.office.com/launch/powerpoint" target="_blank" rel="noopener noreferrer" aria-label="Open PowerPoint in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://teams.microsoft.com/"><img src="icons/teams.svg" alt="" loading="lazy" /><span>Teams</span></a><a class="new-tab" href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Teams in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://outlook.office.com/"><img src="icons/outlook.svg" alt="" loading="lazy" /><span>Outlook</span></a><a class="new-tab" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Outlook in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://onedrive.live.com/"><img src="icons/onedrive.svg" alt="" loading="lazy" /><span>OneDrive</span></a><a class="new-tab" href="https://onedrive.live.com/" target="_blank" rel="noopener noreferrer" aria-label="Open OneDrive in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/word"><img src="icons/word.svg" alt="" loading="lazy" /><span>Word</span></a><a class="new-tab" href="https://www.office.com/launch/word" target="_blank" rel="noopener noreferrer" aria-label="Open Word in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/excel"><img src="icons/excel.svg" alt="" loading="lazy" /><span>Excel</span></a><a class="new-tab" href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer" aria-label="Open Excel in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://www.office.com/launch/powerpoint"><img src="icons/powerpoint.svg" alt="" loading="lazy" /><span>PowerPoint</span></a><a class="new-tab" href="https://www.office.com/launch/powerpoint" target="_blank" rel="noopener noreferrer" aria-label="Open PowerPoint in a new tab">↗</a></article>
             </div>
           </div>
         </details>
 
-        <details class="category" id="google-category">
+        <details class="category" id="google-category" data-shortcut="3">
           <summary>
+            <span class="summary-kicker">03</span>
             <span class="summary-title">Google Workspace</span>
             <span class="summary-subtitle">Docs, Drive, Gmail, Calendar, Sheets, Slides, Meet</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
           <div class="category-panel">
             <div class="menu-grid">
-              <article class="menu-card"><a class="card-main" href="https://docs.google.com/document/"><img src="icons/google-docs.svg" alt="" /><span>Docs</span></a><a class="new-tab" href="https://docs.google.com/document/" target="_blank" rel="noopener noreferrer" aria-label="Open Docs in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://drive.google.com/"><img src="icons/google-drive.svg" alt="" /><span>Drive</span></a><a class="new-tab" href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Drive in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://mail.google.com/"><img src="icons/gmail.svg" alt="" /><span>Gmail</span></a><a class="new-tab" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Gmail in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://calendar.google.com/"><img src="icons/google-calendar.svg" alt="" /><span>Calendar</span></a><a class="new-tab" href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Calendar in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://docs.google.com/spreadsheets/"><img src="icons/google-sheets.svg" alt="" /><span>Sheets</span></a><a class="new-tab" href="https://docs.google.com/spreadsheets/" target="_blank" rel="noopener noreferrer" aria-label="Open Sheets in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://docs.google.com/presentation/"><img src="icons/google-slides.svg" alt="" /><span>Slides</span></a><a class="new-tab" href="https://docs.google.com/presentation/" target="_blank" rel="noopener noreferrer" aria-label="Open Slides in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://meet.google.com/"><img src="icons/google-meet.svg" alt="" /><span>Meet</span></a><a class="new-tab" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Meet in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://docs.google.com/document/"><img src="icons/google-docs.svg" alt="" loading="lazy" /><span>Docs</span></a><a class="new-tab" href="https://docs.google.com/document/" target="_blank" rel="noopener noreferrer" aria-label="Open Docs in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://drive.google.com/"><img src="icons/google-drive.svg" alt="" loading="lazy" /><span>Drive</span></a><a class="new-tab" href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Drive in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://mail.google.com/"><img src="icons/gmail.svg" alt="" loading="lazy" /><span>Gmail</span></a><a class="new-tab" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Gmail in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://calendar.google.com/"><img src="icons/google-calendar.svg" alt="" loading="lazy" /><span>Calendar</span></a><a class="new-tab" href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Calendar in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://docs.google.com/spreadsheets/"><img src="icons/google-sheets.svg" alt="" loading="lazy" /><span>Sheets</span></a><a class="new-tab" href="https://docs.google.com/spreadsheets/" target="_blank" rel="noopener noreferrer" aria-label="Open Sheets in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://docs.google.com/presentation/"><img src="icons/google-slides.svg" alt="" loading="lazy" /><span>Slides</span></a><a class="new-tab" href="https://docs.google.com/presentation/" target="_blank" rel="noopener noreferrer" aria-label="Open Slides in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://meet.google.com/"><img src="icons/google-meet.svg" alt="" loading="lazy" /><span>Meet</span></a><a class="new-tab" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Meet in a new tab">↗</a></article>
             </div>
           </div>
         </details>
 
-        <details class="category" id="ai-category">
+        <details class="category" id="ai-category" data-shortcut="4">
           <summary>
+            <span class="summary-kicker">04</span>
             <span class="summary-title">AI</span>
             <span class="summary-subtitle">ChatGPT, Claude, DeepSeek, Gemini, Perplexity, Grok</span>
             <span class="chevron" aria-hidden="true">⌄</span>
           </summary>
           <div class="category-panel">
             <div class="menu-grid">
-              <article class="menu-card"><a class="card-main" href="https://chatgpt.com/"><img src="icons/chatgpt.svg" alt="" /><span>ChatGPT</span></a><a class="new-tab" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Open ChatGPT in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://claude.ai/"><img src="icons/claude.svg" alt="" /><span>Claude</span></a><a class="new-tab" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Claude in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://chat.deepseek.com/"><img src="icons/deepseek.svg" alt="" /><span>DeepSeek</span></a><a class="new-tab" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" aria-label="Open DeepSeek in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://gemini.google.com/"><img src="icons/gemini.svg" alt="" /><span>Gemini</span></a><a class="new-tab" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Gemini in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://www.perplexity.ai/"><img src="icons/perplexity.svg" alt="" /><span>Perplexity</span></a><a class="new-tab" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Perplexity in a new tab">↗</a></article>
-              <article class="menu-card"><a class="card-main" href="https://grok.com/"><img src="icons/grok.svg" alt="" /><span>Grok</span></a><a class="new-tab" href="https://grok.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Grok in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://chatgpt.com/"><img src="icons/chatgpt.svg" alt="" loading="lazy" /><span>ChatGPT</span></a><a class="new-tab" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Open ChatGPT in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://claude.ai/"><img src="icons/claude.svg" alt="" loading="lazy" /><span>Claude</span></a><a class="new-tab" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Claude in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://chat.deepseek.com/"><img src="icons/deepseek.svg" alt="" loading="lazy" /><span>DeepSeek</span></a><a class="new-tab" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" aria-label="Open DeepSeek in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://gemini.google.com/"><img src="icons/gemini.svg" alt="" loading="lazy" /><span>Gemini</span></a><a class="new-tab" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Gemini in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://www.perplexity.ai/"><img src="icons/perplexity.svg" alt="" loading="lazy" /><span>Perplexity</span></a><a class="new-tab" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" aria-label="Open Perplexity in a new tab">↗</a></article>
+              <article class="menu-card"><a class="card-main" href="https://grok.com/"><img src="icons/grok.svg" alt="" loading="lazy" /><span>Grok</span></a><a class="new-tab" href="https://grok.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Grok in a new tab">↗</a></article>
             </div>
           </div>
         </details>
