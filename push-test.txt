@@ -1,4 +1,0 @@
-Git push test passed.
-
-Created by ChatGPT on 2026-05-03.
-This file is safe to delete.
