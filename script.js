@@ -2,9 +2,43 @@ const searchForm = document.querySelector('#searchForm');
 const searchInput = document.querySelector('#searchInput');
 const clearSearch = document.querySelector('#clearSearch');
 const categories = Array.from(document.querySelectorAll('.category'));
+const storageKey = 'bewf-start-open-section';
 
 function updateClearButton() {
   clearSearch.classList.toggle('visible', searchInput.value.trim().length > 0);
+}
+
+function closeOtherCategories(activeCategory) {
+  categories.forEach((category) => {
+    if (category !== activeCategory) category.open = false;
+  });
+}
+
+function openCategory(category) {
+  if (!category) return;
+  category.open = true;
+  closeOtherCategories(category);
+  localStorage.setItem(storageKey, category.id);
+}
+
+function closeAllCategories() {
+  categories.forEach((category) => {
+    category.open = false;
+  });
+  localStorage.removeItem(storageKey);
+}
+
+function restoreLastOpenCategory() {
+  const savedCategoryId = localStorage.getItem(storageKey);
+  const savedCategory = savedCategoryId ? document.getElementById(savedCategoryId) : null;
+
+  if (savedCategory) {
+    openCategory(savedCategory);
+    return;
+  }
+
+  const defaultCategory = document.querySelector('#media-category');
+  if (defaultCategory) openCategory(defaultCategory);
 }
 
 searchForm.addEventListener('submit', (event) => {
@@ -29,10 +63,16 @@ clearSearch.addEventListener('click', () => {
 
 categories.forEach((category) => {
   category.addEventListener('toggle', () => {
-    if (!category.open) return;
-    categories.forEach((other) => {
-      if (other !== category) other.open = false;
-    });
+    if (category.open) {
+      closeOtherCategories(category);
+      localStorage.setItem(storageKey, category.id);
+      return;
+    }
+
+    const hasOpenCategory = categories.some((item) => item.open);
+    if (!hasOpenCategory && localStorage.getItem(storageKey) === category.id) {
+      localStorage.removeItem(storageKey);
+    }
   });
 });
 
@@ -48,10 +88,18 @@ document.addEventListener('keydown', (event) => {
     return;
   }
 
+  if (!isTyping && /^[1-4]$/.test(event.key)) {
+    event.preventDefault();
+    const targetCategory = categories.find((category) => category.dataset.shortcut === event.key);
+    openCategory(targetCategory);
+    return;
+  }
+
   if (event.key === 'Escape') {
-    categories.forEach((category) => {
-      category.open = false;
-    });
+    closeAllCategories();
     if (isTyping) activeElement.blur();
   }
 });
+
+restoreLastOpenCategory();
+updateClearButton();
